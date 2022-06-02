@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "GoStart/project/api;api";
+
+service Promotion {
+  rpc getLuList (getLuListReq) returns (getLuListResponse);
+}
+
+message getLuListReq {
+  int32 luId = 1;
+  string luname = 2;
+  map<string, int32> dayPriceList = 3;
+  repeated string tag = 4;
+
+}
+
+message getLuListResponse {
+  repeated luResponse List = 1;
+}
+
+message luResponse {
+  string luname = 1;
+  int64 luid = 2;
+}
