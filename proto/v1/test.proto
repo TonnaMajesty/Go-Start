@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "proto/v1;v1";
+
+
+service Test {
+  rpc test (testReq) returns (testReply) {
+  }
+}
+
+message testReq {
+  string name = 1;
+  DoubleValue profit = 2;
+}
+
+message testReply {
+  string res = 1;
+}
+
+message DoubleValue {
+  // The double value.
+  double value = 1;
+}
