@@ -64,7 +64,7 @@ func main() {
 	if err := json.Unmarshal([]byte(input), &env3); err != nil {
 		log.Fatal(err)
 	}
-	switch env.Type {
+	switch env3.Type {
 	case "sound":
 		var s Sound
 		if err := json.Unmarshal(msg, &s); err != nil {
