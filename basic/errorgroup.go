@@ -2,14 +2,17 @@ package main
 
 import (
 	"context"
+	"errors"
 	"fmt"
-	"golang.org/x/sync/errgroup"
 	"os"
+	"time"
+
+	"golang.org/x/sync/errgroup"
 )
 
 var (
-	Blogger   = find("1227368500")
-	Weibo = find("H3GIgngon")
+	Blogger = find("1227368500")
+	Weibo   = find("H3GIgngon")
 )
 
 type Result string
@@ -17,6 +20,10 @@ type Find func(ctx context.Context, query string) (Result, error)
 
 func find(kind string) Find {
 	return func(_ context.Context, query string) (Result, error) {
+		if kind == "1227368500" {
+			return Result("hello"), errors.New("cuowu")
+		}
+		time.Sleep(time.Second * 10)
 		return Result(fmt.Sprintf("%s result for %q", kind, query)), nil
 	}
 }
@@ -39,6 +46,7 @@ func main() {
 			})
 		}
 		if err := g.Wait(); err != nil {
+			fmt.Println(err)
 			return nil, err
 		}
 		return results, nil

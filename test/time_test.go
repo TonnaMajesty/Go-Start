@@ -1,20 +1,14 @@
 package test
 
 import (
-	"fmt"
-	"testing"
+	"sync"
 )
 
-func TestMain(m *testing.M) {
-	fmt.Println("bigin")
-	m.Run()
-	fmt.Println("end")
+type test struct {
+	mutex sync.Mutex
 }
 
-func TestTime(t *testing.T) {
-	t.Error("testtime")
-}
-
-func TestHello(t *testing.T) {
-	t.Error("hello")
+func main() {
+	t := test{}
+	t.mutex.Lock()
 }

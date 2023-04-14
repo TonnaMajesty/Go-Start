@@ -14,12 +14,11 @@ func main() {
 	//返回结构体中某个field的对其值（字节对齐的原因）
 	//func Alignof(x ArbitraryType) uintptr
 
-
 	// uintptr是一个无符号的整型数，足以保存一个地址，可以和unsafe.Pointer 相互转换
-	// unsafe.Pointer 是一个指向变量的指针，因此当变量被移动是对应的指针也必须被更新
+	// unsafe.Pointer 是一个指向变量的指针，因此当变量被移动时对应的指针也必须被更新
 	// uintptr 类型的变量只是一个普通的数字
 
-	a := [4]int{1,2,3,4}
+	a := [4]int{1, 2, 3, 4}
 	ptr := (*int64)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[1])) + unsafe.Sizeof(a[0])))
 	*ptr = 9
 	fmt.Println(a)
