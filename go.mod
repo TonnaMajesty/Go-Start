@@ -15,9 +15,11 @@ require (
 	github.com/elazarl/goproxy v0.0.0-20180725130230-947c36da3153
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/google/wire v0.5.0
+	github.com/gorilla/websocket v1.5.0
 	github.com/grid-x/modbus v0.0.0-20230105075906-8b31e0d1647e
 	github.com/hidez8891/shm v0.0.0-20200313135933-0ec4df5f28c7
 	github.com/inconshreveable/go-vhost v1.0.0
+	github.com/juju/ratelimit v1.0.2
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.8.1
 	github.com/tbrandon/mbserver v0.0.0-20211210035124-daf3c8c4269f
@@ -42,7 +44,6 @@ require (
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/martian v2.1.0+incompatible // indirect
 	github.com/google/uuid v1.3.0 // indirect
-	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/grid-x/serial v0.0.0-20191104121038-e24bc9bf6f08 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
