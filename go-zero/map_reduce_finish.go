@@ -7,6 +7,7 @@ import (
 	"github.com/zeromicro/go-zero/core/mr"
 )
 
+// https://github.com/zeromicro/go-zero/blob/master/core/mr/readme-cn.md
 func main() {
 	pd, err := productDetail(123, 456)
 	fmt.Println(pd, err)

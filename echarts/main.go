@@ -1,1 +1,5 @@
-package echarts
+package main
+
+func main() {
+
+}
